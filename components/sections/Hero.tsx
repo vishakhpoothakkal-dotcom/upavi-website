@@ -12,7 +12,11 @@ import { useRef } from "react";
 
 const GOOGLE_FORM_URL = "https://forms.gle/7c4nFZpz9qh4BAYy7";
 
-export default function Hero() {
+interface HeroProps {
+  onJoinClick?: () => void;
+}
+
+export default function Hero({ onJoinClick }: HeroProps = {}) {
   const shouldReduceMotion = useReducedMotion();
   const heroRef = useRef<HTMLElement>(null);
 

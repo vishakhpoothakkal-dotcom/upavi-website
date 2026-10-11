@@ -17,7 +17,11 @@ const menuItems = [
 const GOOGLE_FORM_URL =
   "https://forms.gle/7c4nFZpz9qh4BAYy7";
 
-export default function Navbar() {
+interface NavbarProps {
+  onJoinClick?: () => void;
+}
+
+export default function Navbar({ onJoinClick }: NavbarProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [donateOpen, setDonateOpen] = useState(false);
